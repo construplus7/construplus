@@ -1,0 +1,76 @@
+---
+import Icon from "./Icon.astro";
+---
+
+<section class="box skills">
+  <div class="stack gap-2 lg:gap-4">
+    <Icon
+      icon="chart-line-up"
+      color="var(--accent-regular)"
+      size="2.5rem"
+      gradient
+    />
+    <h2>Experiencia</h2>
+    <p>
+      Nuestro equipo de profesionales altamente capacitados y con experiencia en construcción garantiza resultados de alta calidad y satisfacción del cliente.
+    </p>
+  </div>
+  <div class="stack gap-2 lg:gap-4">
+    <Icon icon="trophy" color="var(--accent-regular)" size="2.5rem" gradient />
+    <h2>Calidad y Durabilidad</h2>
+    <p>
+      Utilizamos materiales de construcción de primera calidad y técnicas avanzadas para asegurar la durabilidad y longevidad de cada proyecto.
+    </p>
+  </div>
+  <div class="stack gap-2 lg:gap-4">
+    <Icon
+      icon="strategy"
+      color="var(--accent-regular)"
+      size="2.5rem"
+      gradient
+    />
+    <h2>Transparencia</h2>
+    <p>Te proporcionamos un presupuesto detallado y transparente, sin costos ocultos, para que tengas claridad desde el inicio hasta el final del proyecto.</p>
+  </div>
+</section>
+
+<style>
+  .box {
+    border: 1px solid var(--gray-800);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    background-color: var(--gray-999_40);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .skills {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .skills h2 {
+    font-size: var(--text-lg);
+  }
+
+  .skills p {
+    color: var(--gray-400);
+  }
+
+  @media (min-width: 50em) {
+    .box {
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5rem;
+    }
+
+    .skills h2 {
+      font-size: var(--text-2xl);
+    }
+  }
+</style>

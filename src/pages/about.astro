@@ -1,0 +1,120 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<BaseLayout
+  title="Nosotros | ConstruPlus"
+  description="Nosotros ConstruPlus tu Socio Confiable en Servicios de Construcción"
+>
+  <div class="stack gap-20">
+    <main class="wrapper about">
+      <Hero
+        title="Sobre Nosotros "
+        tagline="Nuestro equipo de profesionales altamente capacitados se compromete a superar tus expectativas en cada proyecto.">
+        <img
+          width="1553"
+          height="873"
+          src="/assets/at-work.jpg"
+          alt="Jeanine White at work with a colleague"
+        />
+      </Hero>
+
+      <section>
+        <h2 class="section-title">Estamos para servir</h2>
+        <div class="content">
+          <p>
+            En ConstruPlus, nos enorgullece ser líderes indiscutibles en la industria de la construcción en Paraguay. 
+            Nuestra trayectoria, avalada por años de experiencia, nos ha permitido forjar una sólida reputación tanto a nivel local como internacional.
+          </p>
+          <p>
+            Nuestro equipo de expertos altamente capacitados se distingue por su dedicación inquebrantable hacia la excelencia en cada proyecto. 
+            Nos apasiona superar tus expectativas y nos comprometemos a brindarte resultados sobresalientes en cada etapa del proceso. 
+            Desde el inicio, te ofrecemos asesoramiento personalizado y cercano, hasta la entrega final del proyecto, trabajamos en estrecha colaboración contigo para asegurarnos de que tus metas y requisitos se cumplan con precisión y eficiencia.
+          </p>
+          <p>
+            Entendemos que cada proyecto es único y merece una atención especial. Nos esforzamos por comprender tus necesidades y objetivos para ofrecerte soluciones personalizadas y a medida. 
+            Nuestro enfoque integral garantiza que cada detalle se tenga en cuenta, desde la planificación y diseño hasta la construcción y finalización.
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">ConstruPlus | Expertos en Construcción</h2>
+        <div class="content">
+          <p>En ConstruPlus, estamos listos para ser tu socio de confianza en todos tus proyectos de construcción, sin importar el alcance ni la complejidad! Confía en nosotros para hacer realidad tus ideas y superar tus expectativas.</p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Contacto</h2>
+        <div class="content">
+          <p>¡Contáctanos hoy para hacer realidad tu visión de construcción!</p>
+            <li>Ubi: Capiatá - Paraguay</li>
+            <li>Tel:</li>
+            <li>Email:</li>
+        </div>
+      </section>
+    </main>
+
+    <ContactCTA />
+  </div>
+</BaseLayout>
+
+<style>
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  img {
+    margin-top: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--gray-200);
+  }
+
+  .section-title {
+    grid-column-start: 1;
+    font-size: var(--text-xl);
+    color: var(--gray-0);
+  }
+
+  .content {
+    grid-column: 2 / 4;
+  }
+
+  .content :global(a) {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+  }
+
+  .content :global(a:hover),
+  .content :global(a:focus) {
+    text-decoration-color: currentColor;
+  }
+
+  @media (min-width: 50em) {
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 60% 1fr;
+    }
+
+    .about > :global(:first-child) {
+      grid-column-start: 2;
+    }
+
+    section {
+      display: contents;
+      font-size: var(--text-lg);
+    }
+  }
+</style>

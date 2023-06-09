@@ -1,0 +1,28 @@
+name: New Pull Request  # Define el nombre del flujo de trabajo, en este caso, "Nueva Solicitud de Extracción".
+
+on:
+  pull_request:  # Se ejecuta cuando se abre una nueva solicitud de extracción.
+    branches:
+      - main  # Aplica solo a la rama "main".
+
+permissions:
+  pull-requests: write  # Establece los permisos para las solicitudes de extracción, permitiendo escribir en ellas.
+
+jobs:
+  comment:
+    if: github.event_name == 'pull_request' && github.event.action == 'opened'  # Se ejecuta si el evento es una solicitud de extracción abierta.
+
+    runs-on: ubuntu-latest  # Ejecuta el trabajo en una máquina virtual con Ubuntu.
+
+    steps:
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c  # Configura el repositorio para su uso en el flujo de trabajo.
+        # Aquí se especifica la versión del "actions/checkout" que se utilizará, en este caso, "ac593985615ec2ede58e132d2e21d2b1cbd6127c".
+
+      - name: comment  # Etiqueta el paso como "comment".
+
+        uses: construplus7/comment@1e9986de26cf23e6c4350276234c91705c540fef  # Utiliza la acción "GrantBirki/comment" para agregar comentarios.
+
+        continue-on-error: true  # Continúa con el flujo de trabajo incluso si hay errores en este paso.
+
+        with:
+          file: .github/new-pr-comment.md  # Especifica el archivo que contiene los comentarios que se agregarán a la solicitud de extracción.
